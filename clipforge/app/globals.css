@@ -1,1 +1,43 @@
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#080b14;color:#f7f8fc;font-family:Arial,Helvetica,sans-serif}a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 24px}.nav{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #20263a}.logo{font-weight:800;font-size:24px;letter-spacing:-1px}.logo span{color:#8b7cff}.links{display:flex;gap:26px;color:#b9bfd0;font-size:14px}.btn{display:inline-flex;align-items:center;justify-content:center;background:#8b7cff;color:white;padding:13px 20px;border-radius:10px;font-weight:700;border:0;cursor:pointer}.btn.secondary{background:#151a29;border:1px solid #303750}.hero{padding:88px 0 64px;text-align:center;background:radial-gradient(circle at top,#292152 0,#080b14 55%)}.badge{display:inline-block;padding:8px 13px;background:#17142b;border:1px solid #39315d;border-radius:99px;color:#c8c2ff;font-size:13px}.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.02;letter-spacing:-3px;max-width:900px;margin:24px auto}.hero p{color:#b7bfd0;max-width:720px;margin:0 auto 28px;font-size:18px;line-height:1.6}.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.trust{margin-top:18px;color:#778098;font-size:13px}.section{padding:76px 0}.section h2{font-size:42px;letter-spacing:-1.5px;margin:0 0 12px}.muted{color:#aab2c4;line-height:1.6}.toolbox,.card{background:#101522;border:1px solid #242c40;border-radius:18px;padding:24px}.toolbox{max-width:900px;margin:34px auto}.textarea{width:100%;min-height:160px;background:#090d17;border:1px solid #2b344a;color:#fff;padding:16px;border-radius:12px;resize:vertical;font:inherit}.chips{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}.chip{padding:10px 13px;border-radius:9px;border:1px solid #303950;background:#151b2a;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card h3{margin:8px 0;font-size:20px}.icon{font-size:27px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.stepnum{color:#8b7cff;font-weight:800}.footer{border-top:1px solid #222a3e;padding:42px 0;color:#8d96aa;font-size:14px}.toolpage{padding:60px 0 90px}.toolpage h1{font-size:52px;letter-spacing:-2px;margin-bottom:12px}.formgrid{display:grid;gap:14px;max-width:800px}.field{display:grid;gap:7px}.field label{font-size:14px;color:#cbd1df}.field input,.field select{background:#101522;border:1px solid #303950;border-radius:10px;padding:14px;color:#fff;font:inherit}.output{margin-top:24px;display:grid;gap:12px}.result{padding:17px;background:#111827;border:1px solid #29334a;border-radius:12px;white-space:pre-wrap}.small{font-size:13px;color:#8f98ac}@media(max-width:760px){.links{display:none}.grid,.steps{grid-template-columns:1fr}.hero{padding-top:60px}.toolpage h1{font-size:40px}.section{padding:52px 0}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#080b14;color:#f7f8fc;font-family:Arial,Helvetica,sans-serif}a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 24px}.nav{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #20263a}.logo{font-weight:800;font-size:24px;letter-spacing:-1px}.logo span{color:#8b7cff}.links{display:flex;gap:26px;color:#b9bfd0;font-size:14px}.btn{display:inline-flex;align-items:center;justify-content:center;background:#8b7cff;color:white;padding:13px 20px;border-radius:10px;font-weight:700;border:0;cursor:pointer}.btn.secondary{background:#151a29;border:1px solid #303750}.hero{padding:88px 0 64px;text-align:center;background:radial-gradient(circle at top,#292152 0,#080b14 55%)}.badge{display:inline-block;padding:8px 13px;background:#17142b;border:1px solid #39315d;border-radius:99px;color:#c8c2ff;font-size:13px}.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.02;letter-spacing:-3px;max-width:900px;margin:24px auto}.hero p{color:#b7bfd0;max-width:720px;margin:0 auto 28px;font-size:18px;line-height:1.6}.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.trust{margin-top:18px;color:#778098;font-size:13px}.section{padding:76px 0}.section h2{font-size:42px;letter-spacing:-1.5px;margin:0 0 12px}.muted{color:#aab2c4;line-height:1.6}.toolbox,.card{background:#101522;border:1px solid #242c40;border-radius:18px;padding:24px}.toolbox{max-width:900px;margin:34px auto}.textarea{width:100%;min-height:160px;background:#090d17;border:1px solid #2b344a;color:#fff;padding:16px;border-radius:12px;resize:vertical;font:inherit}.chips{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}.chip{padding:10px 13px;border-radius:9px;border:1px solid #303950;background:#151b2a;font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card h3{margin:8px 0;font-size:20px}.icon{font-size:27px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.stepnum{color:#8b7cff;font-weight:800}.footer{border-top:1px solid #222a3e;padding:42px 0;color:#8d96aa;font-size:14px}.toolpage{padding:60px 0 90px}.toolpage h1{font-size:52px;letter-spacing:-2px;margin-bottom:12px}.formgrid{display:grid;gap:14px;max-width:800px}.field{display:grid;gap:7px}.field label{font-size:14px;color:#cbd1df}.field input,.field select{background:#101522;border:1px solid #303950;border-radius:10px;padding:14px;color:#fff;font:inherit}.output{margin-top:24px;display:grid;gap:12px}.result{padding:17px;background:#111827;border:1px solid #29334a;border-radius:12px;white-space:pre-wrap}.small{font-size:13px;color:#8f98ac}@media(max-width:760px){.links{display:none}.grid,.steps{grid-template-columns:1fr}.hero{padding-top:60px}.toolpage h1{font-size:40px}.section{padding:52px 0}}.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:32px;
+}
+
+.tool-card{
+  background:#101522;
+  border:1px solid #242c40;
+  border-radius:18px;
+  padding:24px;
+  min-height:150px;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+
+.tool-card:hover{
+  transform:translateY(-3px);
+  border-color:#4a426f;
+  background:#131a2a;
+}
+
+.tool-card h2{
+  margin:0 0 12px;
+  font-size:20px;
+}
+
+.tool-card p{
+  margin:0 0 18px;
+  color:#aab2c4;
+  line-height:1.6;
+}
+
+.tool-card a{
+  color:#fff;
+  font-weight:700;
+}
+
+@media(max-width:760px){
+  .tools-grid{
+    grid-template-columns:1fr;
+  }
+}
