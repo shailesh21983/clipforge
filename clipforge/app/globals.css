@@ -1,17 +1,489 @@
-/* =========================================
-   ClipForge Tool Page
-========================================= */
+/* =========================================================
+   CLIPFORGE GLOBAL STYLES
+   Homepage + Header + Tools + Mobile Responsive
+========================================================= */
 
-.tool-page {
-  min-height: 100vh;
-  padding: 82px 24px 100px;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #080b14;
+  color: #f7f8fc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  width: 100%;
+  height: 74px;
+  background: #080b14;
+  border-bottom: 1px solid #20263a;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1180px;
+  height: 74px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.site-logo {
+  flex-shrink: 0;
+  color: #f7f8fc !important;
+  text-decoration: none !important;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.site-logo span {
+  color: #8b7cff;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-left: auto;
+}
+
+.site-nav a {
+  color: #b9bfd0 !important;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.site-nav a:hover {
+  color: #fff !important;
+}
+
+.header-cta {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  padding: 0 18px;
+
+  background: #8b7cff !important;
+  color: #fff !important;
+
+  border: 1px solid #8b7cff;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.header-cta:hover {
+  background: #796aff !important;
+}
+
+
+/* =========================================================
+   OLD HEADER CLASS SUPPORT
+========================================================= */
+
+.nav {
+  width: 100%;
+  height: 74px;
+  background: #080b14;
+  border-bottom: 1px solid #20263a;
+}
+
+.logo {
+  color: #f7f8fc !important;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: #8b7cff;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.links a {
+  color: #b9bfd0 !important;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #8b7cff;
+  color: #fff !important;
+
+  padding: 13px 20px;
+  border-radius: 10px;
+  border: 0;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   HOMEPAGE HERO
+========================================================= */
+
+.hero {
+  padding: 105px 24px 90px;
+  text-align: center;
+
   background:
     radial-gradient(
       circle at 50% 0%,
       #292152 0%,
-      #111126 28%,
-      #080b14 62%
+      #17142b 20%,
+      #080b14 58%
     );
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 14px;
+
+  background: #17142b;
+  border: 1px solid #39315d;
+  border-radius: 999px;
+
+  color: #c8c2ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero h1 {
+  max-width: 950px;
+  margin: 24px auto;
+
+  color: #f7f8fc;
+
+  font-size: clamp(46px, 7vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -3px;
+  font-weight: 800;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 0 auto 28px;
+
+  color: #b7bfd0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.actions .btn {
+  min-height: 46px;
+  padding: 0 20px;
+}
+
+.btn.secondary {
+  background: #151a29;
+  border: 1px solid #303750;
+}
+
+.btn.secondary:hover {
+  background: #1c2233;
+}
+
+.trust {
+  margin-top: 18px;
+  color: #778098;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section {
+  width: 100%;
+  padding: 85px 0;
+}
+
+.section h2 {
+  margin: 0 0 12px;
+
+  color: #f7f8fc;
+
+  font-size: 42px;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+.muted {
+  color: #aab2c4;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTENT REPURPOSER
+========================================================= */
+
+.section > .wrap {
+  text-align: center;
+}
+
+.section > .wrap > p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toolbox {
+  width: 100%;
+  max-width: 900px;
+  margin: 34px auto 0;
+
+  padding: 24px;
+
+  background: #101522;
+  border: 1px solid #242c40;
+  border-radius: 18px;
+
+  text-align: left;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 160px;
+
+  padding: 16px;
+
+  background: #090d17;
+  border: 1px solid #2b344a;
+  border-radius: 12px;
+
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.6;
+
+  outline: none;
+  resize: vertical;
+}
+
+.textarea::placeholder {
+  color: #737d91;
+}
+
+.textarea:focus {
+  border-color: #8b7cff;
+  box-shadow: 0 0 0 3px rgba(139, 124, 255, 0.12);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin: 16px 0;
+}
+
+.chip {
+  padding: 10px 13px;
+
+  background: #151b2a;
+  border: 1px solid #303950;
+  border-radius: 9px;
+
+  color: #d9deea;
+  font-size: 14px;
+}
+
+.toolbox .btn {
+  min-height: 44px;
+}
+
+
+/* =========================================================
+   TOOL CARDS
+========================================================= */
+
+.grid,
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+
+  margin-top: 32px;
+}
+
+.card,
+.tool-card {
+  min-height: 150px;
+  padding: 24px;
+
+  background: #101522;
+  border: 1px solid #242c40;
+  border-radius: 18px;
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.card:hover,
+.tool-card:hover {
+  transform: translateY(-3px);
+  border-color: #4a426f;
+  background: #131a2a;
+}
+
+.card h3,
+.tool-card h2 {
+  margin: 8px 0 12px;
+
+  color: #fff;
+  font-size: 20px;
+}
+
+.card p,
+.tool-card p {
+  margin: 0 0 18px;
+
+  color: #aab2c4;
+  line-height: 1.6;
+}
+
+.tool-card a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.icon {
+  font-size: 27px;
+}
+
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  margin-top: 28px;
+}
+
+.step {
+  padding: 22px;
+
+  background: #101522;
+  border: 1px solid #242c40;
+  border-radius: 16px;
+
+  text-align: left;
+}
+
+.stepnum,
+.step-number {
+  margin-bottom: 14px;
+
+  color: #8b7cff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.step h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.step p {
+  margin: 0;
+
+  color: #9fa8b8;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   ASPECT RATIO TOOL
+========================================================= */
+
+.tool-page {
+  min-height: 100vh;
+
+  padding: 0 24px 100px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #292152 0%,
+      #17142b 18%,
+      #080b14 48%
+    );
+
   color: #f7f8fc;
 }
 
@@ -21,30 +493,42 @@
   margin: 0 auto;
 }
 
-/* ---------- Hero ---------- */
+
+/* ---------- Tool Hero ---------- */
 
 .tool-hero {
-  text-align: center;
   max-width: 900px;
-  margin: 0 auto 58px;
+
+  padding-top: 78px;
+  margin: 0 auto 52px;
+
+  text-align: center;
 }
 
 .tool-badge {
   display: inline-flex;
   align-items: center;
+
   padding: 8px 14px;
-  border-radius: 999px;
+
   background: #17142b;
   border: 1px solid #39315d;
+  border-radius: 999px;
+
   color: #c8c2ff;
+
   font-size: 13px;
   font-weight: 600;
 }
 
 .tool-hero h1 {
-  margin: 24px auto 16px;
   max-width: 900px;
-  font-size: clamp(44px, 7vw, 72px);
+
+  margin: 24px auto 18px;
+
+  color: #f7f8fc;
+
+  font-size: clamp(46px, 7vw, 76px);
   line-height: 1.02;
   letter-spacing: -3px;
   font-weight: 800;
@@ -52,22 +536,30 @@
 
 .tool-hero p {
   max-width: 720px;
+
   margin: 0 auto;
+
   color: #b7bfd0;
-  font-size: 18px;
+
+  font-size: 17px;
   line-height: 1.6;
 }
+
 
 /* ---------- Calculator ---------- */
 
 .calculator-card {
   width: 100%;
   max-width: 900px;
+
   margin: 0 auto;
   padding: 24px;
+
   background: #101522;
   border: 1px solid #242c40;
   border-radius: 18px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .18);
 }
 
 .input-grid {
@@ -82,20 +574,26 @@
 }
 
 .input-group label {
+  color: #f7f8fc;
+
   font-size: 14px;
   font-weight: 700;
-  color: #f7f8fc;
 }
 
 .input-group input {
   width: 100%;
   height: 48px;
+
   padding: 0 14px;
+
+  background: #090d17;
   border: 1px solid #303950;
   border-radius: 10px;
-  background: #090d17;
+
   color: #fff;
-  font: inherit;
+
+  font-size: 15px;
+
   outline: none;
 }
 
@@ -105,32 +603,37 @@
 
 .input-group input:focus {
   border-color: #8b7cff;
-  box-shadow: 0 0 0 3px rgba(139, 124, 255, 0.12);
+  box-shadow: 0 0 0 3px rgba(139, 124, 255, .12);
 }
 
-/* ---------- Buttons ---------- */
+
+/* ---------- Calculator Buttons ---------- */
 
 .button-row {
   display: flex;
   gap: 12px;
+
   margin-top: 18px;
 }
 
 .primary-button,
 .secondary-button {
   height: 44px;
+
   padding: 0 20px;
+
   border-radius: 10px;
+
   font-size: 14px;
   font-weight: 700;
-  cursor: pointer;
+
   transition: .2s ease;
 }
 
 .primary-button {
   background: #8b7cff;
-  color: #fff;
   border: 1px solid #8b7cff;
+  color: #fff;
 }
 
 .primary-button:hover {
@@ -140,35 +643,42 @@
 
 .secondary-button {
   background: #151a29;
-  color: #fff;
   border: 1px solid #303750;
+  color: #fff;
 }
 
 .secondary-button:hover {
   background: #1b2132;
 }
 
+
 /* ---------- Result ---------- */
 
 .ratio-result {
   margin-top: 18px;
   padding: 20px;
+
   background: #090d17;
   border: 1px solid #29334a;
   border-radius: 12px;
+
   text-align: center;
 }
 
 .ratio-result span {
   display: block;
+
   margin-bottom: 6px;
+
   color: #8f98ac;
   font-size: 13px;
 }
 
 .ratio-result strong {
   display: block;
+
   color: #fff;
+
   font-size: 32px;
   letter-spacing: -1px;
 }
@@ -178,74 +688,98 @@
   font-size: 14px !important;
 }
 
-/* ---------- Popular Ratios ---------- */
+
+/* =========================================================
+   COMMON ASPECT RATIOS
+========================================================= */
 
 .popular-section {
+  width: 100%;
   max-width: 900px;
-  margin: 58px auto 0;
+
+  margin: 52px auto 0;
 }
 
 .popular-section h2,
 .tool-content h2,
 .steps-section h2 {
   margin: 0 0 12px;
+
   color: #f7f8fc;
+
   font-size: 32px;
   line-height: 1.15;
-  letter-spacing: -1px;
+  letter-spacing: -1.2px;
+  font-weight: 800;
 }
 
 .popular-section > p {
   margin: 0 0 20px;
+
   color: #aab2c4;
-  font-size: 15px;
+
+  font-size: 14px;
   line-height: 1.6;
 }
 
 .ratio-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
+  gap: 10px;
 }
 
 .ratio-card {
-  min-height: 88px;
-  padding: 15px;
+  min-height: 82px;
+
+  padding: 13px;
+
+  background: #101522;
   border: 1px solid #242c40;
   border-radius: 14px;
-  background: #101522;
+
   color: #fff;
+
   text-align: left;
-  cursor: pointer;
-  transition: transform .2s ease,
-              border-color .2s ease,
-              background .2s ease;
+
+  transition: .2s ease;
 }
 
 .ratio-card:hover {
   transform: translateY(-3px);
-  border-color: #4a426f;
+
   background: #131a2a;
+  border-color: #4a426f;
 }
 
 .ratio-card strong {
   display: block;
-  margin-bottom: 7px;
+
+  margin-bottom: 6px;
+
+  color: #fff;
+
   font-size: 18px;
 }
 
 .ratio-card span {
   display: block;
+
   color: #8f98ac;
-  font-size: 11px;
+
+  font-size: 10px;
   line-height: 1.35;
 }
 
-/* ---------- Content ---------- */
+
+/* =========================================================
+   TOOL CONTENT
+========================================================= */
 
 .tool-content {
+  width: 100%;
   max-width: 900px;
-  margin: 70px auto 0;
+
+  margin: 64px auto 0;
 }
 
 .tool-content h2 {
@@ -258,86 +792,233 @@
 
 .tool-content p {
   margin: 0;
+
   color: #aab2c4;
-  font-size: 16px;
+
+  font-size: 15px;
   line-height: 1.8;
 }
 
 .ratio-list {
   display: grid;
   gap: 10px;
+
   margin-top: 20px;
 }
 
 .ratio-list div {
   padding: 15px 17px;
+
   background: #101522;
   border: 1px solid #242c40;
   border-radius: 12px;
+
   color: #aab2c4;
+
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .ratio-list strong {
   color: #fff;
 }
 
-/* ---------- Steps ---------- */
+
+/* =========================================================
+   TOOL STEPS
+========================================================= */
 
 .steps-section {
+  width: 100%;
   max-width: 900px;
-  margin: 70px auto 0;
+
+  margin: 64px auto 0;
 }
 
-.steps {
-  display: grid;
+.steps-section .steps {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin-top: 24px;
+
+  margin-top: 20px;
 }
 
-.step {
-  padding: 22px;
-  background: #101522;
-  border: 1px solid #242c40;
-  border-radius: 16px;
-}
 
-.step-number {
-  margin-bottom: 14px;
-  color: #8b7cff;
-  font-size: 13px;
-  font-weight: 800;
-}
+/* =========================================================
+   FOOTER
+========================================================= */
 
-.step h3 {
-  margin: 0 0 9px;
-  color: #fff;
-  font-size: 18px;
-}
+.footer {
+  width: 100%;
 
-.step p {
-  margin: 0;
-  color: #9fa8b8;
+  padding: 42px 0;
+
+  background: #080b14;
+
+  border-top: 1px solid #222a3e;
+
+  color: #8d96aa;
+
   font-size: 14px;
-  line-height: 1.65;
 }
 
-/* ---------- Mobile ---------- */
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 900px) {
+
   .ratio-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .grid,
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    padding-top: 80px;
+  }
 }
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 760px) {
 
+  .wrap {
+    padding: 0 16px;
+  }
+
+
+  /* Header */
+
+  .site-header {
+    height: 64px;
+  }
+
+  .header-inner {
+    height: 64px;
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .site-logo {
+    font-size: 20px;
+  }
+
+  .site-nav,
+  .links {
+    display: none !important;
+  }
+
+  .header-cta {
+    min-height: 38px;
+    padding: 0 12px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+
+
+  /* Old header */
+
+  .nav {
+    height: 64px;
+  }
+
+  .nav > .wrap {
+    height: 64px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .btn {
+    padding: 10px 13px;
+    font-size: 12px;
+  }
+
+
+  /* Homepage */
+
+  .hero {
+    padding: 65px 16px 65px;
+  }
+
+  .hero h1 {
+    margin: 22px auto;
+
+    font-size: clamp(40px, 12vw, 58px);
+    letter-spacing: -2px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+
+  .actions .btn {
+    width: 100%;
+  }
+
+
+  .section {
+    padding: 58px 0;
+  }
+
+  .section h2 {
+    font-size: 32px;
+  }
+
+
+  /* Cards */
+
+  .grid,
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .tool-card {
+    min-height: auto;
+  }
+
+
+  /* Repurpose */
+
+  .toolbox {
+    padding: 16px;
+  }
+
+  .textarea {
+    min-height: 150px;
+  }
+
+
+  /* Steps */
+
+  .steps,
+  .steps-section .steps {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Aspect Ratio */
+
   .tool-page {
-    padding: 60px 16px 80px;
+    padding: 0 16px 80px;
   }
 
   .tool-hero {
+    padding-top: 60px;
     margin-bottom: 40px;
   }
 
@@ -362,10 +1043,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .steps {
-    grid-template-columns: 1fr;
-  }
-
   .popular-section h2,
   .tool-content h2,
   .steps-section h2 {
@@ -373,11 +1050,42 @@
   }
 }
 
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
 @media (max-width: 420px) {
+
+  .header-inner {
+    padding: 0 12px;
+  }
+
+  .site-logo {
+    font-size: 19px;
+  }
+
+  .header-cta {
+    min-height: 36px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding-top: 55px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
 
   .tool-page {
     padding-left: 14px;
     padding-right: 14px;
+  }
+
+  .tool-hero {
+    padding-top: 48px;
   }
 
   .tool-hero h1 {
@@ -405,486 +1113,29 @@
   .ratio-card {
     min-height: 82px;
   }
-}/* =========================================
-   FINAL CLIPFORGE TOOL UI OVERRIDE
-========================================= */
-
-.tool-page {
-  min-height: 100vh;
-  padding: 76px 24px 100px;
-  background: #080b14;
-  color: #f7f8fc;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-.tool-container {
-  max-width: 1180px;
-  margin: 0 auto;
-}
 
-/* Hero */
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
 
-.tool-hero {
-  max-width: 900px;
-  margin: 0 auto 48px;
-  text-align: center;
-}
+@media (max-width: 350px) {
 
-.tool-badge {
-  display: inline-block;
-  padding: 8px 13px;
-  background: #17142b;
-  border: 1px solid #39315d;
-  border-radius: 99px;
-  color: #c8c2ff;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.tool-hero h1 {
-  margin: 24px auto 16px;
-  color: #f7f8fc;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(42px, 7vw, 76px);
-  font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -3px;
-}
-
-.tool-hero p {
-  max-width: 720px;
-  margin: 0 auto;
-  color: #b7bfd0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* Calculator */
-
-.calculator-card {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px;
-  background: #101522;
-  border: 1px solid #242c40;
-  border-radius: 18px;
-}
-
-.input-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.input-group label {
-  display: block;
-  margin-bottom: 8px;
-  color: #f7f8fc;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.input-group input {
-  width: 100%;
-  height: 48px;
-  padding: 0 14px;
-  background: #090d17;
-  border: 1px solid #303950;
-  border-radius: 10px;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  outline: none;
-}
-
-.input-group input:focus {
-  border-color: #8b7cff;
-}
-
-/* Buttons */
-
-.button-row {
-  display: flex;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.primary-button {
-  height: 44px;
-  padding: 0 20px;
-  background: #8b7cff;
-  border: 1px solid #8b7cff;
-  border-radius: 10px;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.primary-button:hover {
-  background: #796aff;
-}
-
-.secondary-button {
-  height: 44px;
-  padding: 0 20px;
-  background: #151a29;
-  border: 1px solid #303750;
-  border-radius: 10px;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* Popular */
-
-.popular-section {
-  max-width: 900px;
-  margin: 52px auto 0;
-}
-
-.popular-section h2,
-.tool-content h2,
-.steps-section h2 {
-  color: #f7f8fc;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  letter-spacing: -1.2px;
-}
-
-.popular-section > p {
-  color: #aab2c4;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-}
-
-.ratio-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
-}
-
-.ratio-card {
-  min-height: 82px;
-  padding: 13px;
-  background: #101522;
-  border: 1px solid #242c40;
-  border-radius: 14px;
-  color: #fff;
-  text-align: left;
-  cursor: pointer;
-  transition: .2s ease;
-}
-
-.ratio-card:hover {
-  transform: translateY(-3px);
-  background: #131a2a;
-  border-color: #4a426f;
-}
-
-.ratio-card strong {
-  display: block;
-  margin-bottom: 6px;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-}
-
-.ratio-card span {
-  display: block;
-  color: #8f98ac;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10px;
-}
-
-/* Content */
-
-.tool-content {
-  max-width: 900px;
-  margin: 64px auto 0;
-}
-
-.tool-content p {
-  color: #aab2c4;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-/* Steps */
-
-.steps-section {
-  max-width: 900px;
-  margin: 64px auto 0;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 20px;
-}
-
-.step {
-  padding: 22px;
-  background: #101522;
-  border: 1px solid #242c40;
-  border-radius: 16px;
-}
-
-.step-number {
-  margin-bottom: 12px;
-  color: #8b7cff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.step h3 {
-  margin: 0 0 8px;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-}
-
-.step p {
-  color: #9fa8b8;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* Mobile */
-
-@media (max-width: 900px) {
-  .ratio-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 760px) {
-
-  .tool-page {
-    padding: 60px 16px 80px;
-  }
-
-  .tool-hero h1 {
-    font-size: 42px;
-    letter-spacing: -2px;
-  }
-
-  .tool-hero p {
-    font-size: 16px;
-  }
-
-  .input-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ratio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .steps {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 420px) {
-
-  .tool-hero h1 {
-    font-size: 34px;
-  }
-
-  .calculator-card {
-    padding: 16px;
-  }
-
-  .button-row {
-    flex-wrap: wrap;
-  }
-
-  .primary-button,
-  .secondary-button {
-    width: 100%;
-  }
-}/* =========================================
-   FINAL TOOL HERO - MATCH CLIPFORGE HOME
-========================================= */
-
-.tool-page {
-  min-height: 100vh;
-  padding: 0 24px 100px;
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      #292152 0%,
-      #17142b 18%,
-      #080b14 48%
-    );
-}
-
-.tool-hero {
-  padding-top: 78px;
-  margin-bottom: 52px;
-}
-
-.tool-hero h1 {
-  max-width: 900px;
-  margin: 24px auto 18px;
-  font-size: clamp(46px, 7vw, 72px);
-  line-height: 1.02;
-  letter-spacing: -3px;
-}
-
-.tool-hero p {
-  max-width: 720px;
-  margin: 0 auto;
-  font-size: 17px;
-  line-height: 1.6;
-}
-
-.calculator-card {
-  box-shadow: 0 20px 60px rgba(0,0,0,.18);
-}/* =========================================
-   CLIPFORGE HEADER - RESPONSIVE FIX
-========================================= */
-
-.site-header {
-  width: 100%;
-  height: 74px;
-  border-bottom: 1px solid #20263a;
-  background: #080b14;
-}
-
-.header-inner {
-  width: 100%;
-  max-width: 1180px;
-  height: 74px;
-  margin: 0 auto;
-  padding: 0 24px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.site-logo {
-  flex-shrink: 0;
-  color: #f7f8fc !important;
-  text-decoration: none !important;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-.site-logo span {
-  color: #8b7cff;
-}
-
-.site-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 28px;
-  margin-left: auto;
-}
-
-.site-nav a {
-  color: #b9bfd0 !important;
-  text-decoration: none !important;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.site-nav a:hover {
-  color: #ffffff !important;
-}
-
-.header-cta {
-  flex-shrink: 0;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 44px;
-  padding: 0 18px;
-
-  background: #8b7cff !important;
-  color: #ffffff !important;
-
-  border: 1px solid #8b7cff;
-  border-radius: 10px;
-
-  text-decoration: none !important;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.header-cta:hover {
-  background: #796aff !important;
-}
-
-/* =========================================
-   MOBILE HEADER
-========================================= */
-
-@media (max-width: 760px) {
-
-  .site-header {
-    height: 64px;
-  }
-
-  .header-inner {
-    height: 64px;
-    padding: 0 16px;
-    gap: 12px;
+  .header-cta {
+    font-size: 10px;
+    padding: 0 8px;
   }
 
   .site-logo {
-    font-size: 20px;
+    font-size: 18px;
   }
 
-  .site-nav {
-    display: none !important;
+  .hero h1 {
+    font-size: 36px;
   }
 
-  .header-cta {
-    min-height: 38px;
-    padding: 0 12px;
-    border-radius: 8px;
-    font-size: 12px;
-  }
-}
-
-/* Small phones */
-
-@media (max-width: 420px) {
-
-  .header-inner {
-    padding: 0 12px;
-  }
-
-  .site-logo {
-    font-size: 19px;
-  }
-
-  .header-cta {
-    min-height: 36px;
-    padding: 0 10px;
-    font-size: 11px;
+  .tool-hero h1 {
+    font-size: 31px;
   }
 }
