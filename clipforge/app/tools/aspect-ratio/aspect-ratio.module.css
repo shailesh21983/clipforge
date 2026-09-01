@@ -1,226 +1,178 @@
 .page {
   min-height: 100vh;
-  padding: 0 24px 100px;
-
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      #292152 0%,
-      #17142b 18%,
-      #080b14 48%
-    );
-
+  background: #080b14;
   color: #f7f8fc;
+  padding: 72px 24px 100px;
 }
 
 .container {
   width: 100%;
-  max-width: 1180px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
-  max-width: 900px;
-  padding-top: 76px;
-  margin: 0 auto 48px;
   text-align: center;
+  margin-bottom: 38px;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
-
-  padding: 8px 13px;
-
-  background: #17142b;
+  justify-content: center;
+  padding: 7px 14px;
   border: 1px solid #39315d;
+  background: #17142b;
   border-radius: 999px;
-
   color: #c8c2ff;
-
   font-size: 13px;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
+  margin: 0;
   max-width: 900px;
-
-  margin: 24px auto 18px;
-
-  color: #f7f8fc;
-
-  font-size: clamp(46px, 7vw, 72px);
-  line-height: 1.02;
-  letter-spacing: -3px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(42px, 6vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -2.5px;
   font-weight: 800;
 }
 
 .hero p {
-  max-width: 720px;
-
-  margin: 0 auto;
-
-  color: #b7bfd0;
-
-  font-size: 17px;
-  line-height: 1.6;
+  max-width: 680px;
+  margin: 18px auto 0;
+  color: #aeb6c8;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
-
-/* =========================
-   CALCULATOR
-========================= */
+/* CALCULATOR */
 
 .calculator {
   width: 100%;
-  max-width: 900px;
-
-  margin: 0 auto;
-  padding: 24px;
-
   background: #101522;
-  border: 1px solid #242c40;
+  border: 1px solid #293147;
   border-radius: 18px;
-
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
 }
 
 .inputGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.inputGroup {
+  min-width: 0;
 }
 
 .inputGroup label {
   display: block;
-
   margin-bottom: 8px;
-
-  color: #f7f8fc;
-
+  color: #f5f7fb;
   font-size: 14px;
   font-weight: 700;
 }
 
 .inputGroup input {
-  display: block;
-
   width: 100%;
-  height: 48px;
-
-  padding: 0 14px;
-
-  background: #090d17;
+  height: 46px;
+  display: block;
+  box-sizing: border-box;
+  padding: 0 13px;
   border: 1px solid #303950;
-  border-radius: 10px;
-
-  color: #fff;
-
-  font-size: 15px;
-
+  border-radius: 9px;
   outline: none;
+  background: #090d17;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: inherit;
 }
 
 .inputGroup input::placeholder {
-  color: #737d91;
+  color: #65708a;
 }
 
 .inputGroup input:focus {
   border-color: #8b7cff;
-
-  box-shadow:
-    0 0 0 3px rgba(139, 124, 255, 0.12);
+  box-shadow: 0 0 0 3px rgba(139, 124, 255, 0.12);
 }
 
-
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 .buttonRow {
   display: flex;
-  gap: 12px;
-
-  margin-top: 18px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 .primaryButton,
 .secondaryButton {
-  min-height: 44px;
-
-  padding: 0 20px;
-
-  border-radius: 10px;
-
+  height: 42px;
+  padding: 0 17px;
+  border-radius: 9px;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 700;
-
+  cursor: pointer;
   transition:
+    transform 0.2s ease,
     background 0.2s ease,
-    transform 0.2s ease;
+    border-color 0.2s ease;
 }
 
 .primaryButton {
-  background: #8b7cff;
   border: 1px solid #8b7cff;
-
-  color: #fff;
+  background: #8b7cff;
+  color: #ffffff;
 }
 
 .primaryButton:hover {
-  background: #796aff;
+  background: #988aff;
   transform: translateY(-1px);
 }
 
 .secondaryButton {
-  background: #151a29;
-  border: 1px solid #303750;
-
-  color: #fff;
+  border: 1px solid #303950;
+  background: transparent;
+  color: #eef1f8;
 }
 
 .secondaryButton:hover {
-  background: #1b2132;
+  background: #171d2c;
+  border-color: #46506a;
 }
 
-
-/* =========================
-   RESULT
-========================= */
+/* RESULT */
 
 .result {
   margin-top: 18px;
-  padding: 20px;
-
-  background: #090d17;
-  border: 1px solid #29334a;
+  padding: 18px;
+  border: 1px solid #303950;
   border-radius: 12px;
-
+  background: #0b0f18;
   text-align: center;
 }
 
 .result span {
   display: block;
-
-  margin-bottom: 6px;
-
-  color: #8f98ac;
-
+  margin-bottom: 5px;
+  color: #909bb0;
   font-size: 13px;
 }
 
 .result strong {
   display: block;
-
-  color: #fff;
-
-  font-size: 32px;
-  letter-spacing: -1px;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1.2;
 }
 
 .error {
@@ -228,102 +180,80 @@
   font-size: 14px !important;
 }
 
-
-/* =========================
-   POPULAR
-========================= */
+/* COMMON RATIOS */
 
 .popular {
-  max-width: 900px;
-
-  margin: 52px auto 0;
+  margin-top: 44px;
 }
 
 .popular h2,
 .content h2,
 .stepsSection h2 {
-  margin: 0 0 12px;
-
+  margin: 0 0 10px;
   color: #f7f8fc;
-
-  font-size: 32px;
-  line-height: 1.15;
-  letter-spacing: -1px;
+  font-size: 25px;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
 }
 
-.popular > p {
-  margin: 0 0 20px;
-
-  color: #aab2c4;
-
+.sectionDescription {
+  margin: 0 0 18px;
+  color: #8f9ab0;
   font-size: 14px;
   line-height: 1.6;
 }
 
 .ratioGrid {
   display: grid;
-
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
 }
 
-.ratioGrid button {
-  min-height: 82px;
-
-  padding: 13px;
-
+.ratioCard {
+  min-width: 0;
+  min-height: 78px;
+  padding: 12px;
+  border: 1px solid #293147;
+  border-radius: 12px;
   background: #101522;
-  border: 1px solid #242c40;
-  border-radius: 14px;
-
-  color: #fff;
-
+  color: #ffffff;
   text-align: left;
-
+  cursor: pointer;
+  font-family: inherit;
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,
     background 0.2s ease;
 }
 
-.ratioGrid button:hover {
-  transform: translateY(-3px);
-
-  background: #131a2a;
-  border-color: #4a426f;
+.ratioCard:hover {
+  transform: translateY(-2px);
+  border-color: #4a5570;
+  background: #141a29;
 }
 
-.ratioGrid strong {
+.ratioCard strong {
   display: block;
-
-  margin-bottom: 6px;
-
-  font-size: 18px;
+  margin-bottom: 5px;
+  font-size: 17px;
+  line-height: 1.2;
 }
 
-.ratioGrid span {
+.ratioCard span {
   display: block;
-
-  color: #8f98ac;
-
+  color: #8d98ad;
   font-size: 10px;
   line-height: 1.35;
 }
 
-
-/* =========================
-   CONTENT
-========================= */
+/* CONTENT */
 
 .content {
-  max-width: 900px;
-
-  margin: 64px auto 0;
+  margin-top: 56px;
 }
 
 .content h2 {
-  margin-top: 42px;
+  margin-top: 34px;
 }
 
 .content h2:first-child {
@@ -332,188 +262,164 @@
 
 .content p {
   margin: 0;
-
-  color: #aab2c4;
-
+  color: #aeb6c8;
   font-size: 15px;
   line-height: 1.8;
 }
 
 .ratioList {
   display: grid;
-
-  gap: 10px;
-
+  gap: 9px;
   margin-top: 20px;
 }
 
 .ratioList div {
   display: flex;
-  gap: 6px;
-
-  padding: 15px 17px;
-
+  align-items: baseline;
+  gap: 8px;
+  padding: 13px 15px;
+  border: 1px solid #272f42;
+  border-radius: 9px;
   background: #101522;
-  border: 1px solid #242c40;
-  border-radius: 12px;
-
-  color: #aab2c4;
-
+  color: #aeb6c8;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .ratioList strong {
-  color: #fff;
-  white-space: nowrap;
+  flex: 0 0 auto;
+  color: #ffffff;
 }
 
-
-/* =========================
-   STEPS
-========================= */
+/* STEPS */
 
 .stepsSection {
-  max-width: 900px;
-
-  margin: 64px auto 0;
+  margin-top: 58px;
 }
 
 .steps {
   display: grid;
-
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 16px;
-
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
   margin-top: 20px;
 }
 
 .step {
-  padding: 22px;
-
+  padding: 20px;
+  border: 1px solid #293147;
+  border-radius: 13px;
   background: #101522;
-  border: 1px solid #242c40;
-  border-radius: 16px;
 }
 
 .stepNumber {
-  margin-bottom: 12px;
-
+  margin-bottom: 14px;
   color: #8b7cff;
-
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
 }
 
 .step h3 {
   margin: 0 0 8px;
-
-  color: #fff;
-
-  font-size: 18px;
+  color: #ffffff;
+  font-size: 16px;
 }
 
 .step p {
   margin: 0;
-
-  color: #9fa8b8;
-
-  font-size: 14px;
-  line-height: 1.6;
+  color: #929db1;
+  font-size: 13px;
+  line-height: 1.65;
 }
 
-
-/* =========================
-   TABLET
-========================= */
+/* TABLET */
 
 @media (max-width: 900px) {
-
-  .ratioGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .container {
+    max-width: 760px;
   }
 
+  .ratioGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
+/* MOBILE */
 
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 760px) {
-
+@media (max-width: 700px) {
   .page {
-    padding: 0 16px 70px;
+    padding: 52px 16px 75px;
+  }
+
+  .container {
+    max-width: 100%;
   }
 
   .hero {
-    padding-top: 48px;
-    margin-bottom: 34px;
+    margin-bottom: 30px;
   }
 
   .badge {
-    padding: 7px 12px;
+    margin-bottom: 17px;
     font-size: 12px;
+    padding: 7px 12px;
   }
 
   .hero h1 {
-    margin: 20px auto 16px;
-
-    font-size: 42px;
-    line-height: 1.04;
-    letter-spacing: -2px;
+    font-size: clamp(36px, 10vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -1.8px;
   }
 
   .hero p {
-    font-size: 15px;
-    line-height: 1.6;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.65;
   }
-
-
-  /* Calculator */
 
   .calculator {
     padding: 16px;
-    border-radius: 14px;
+    border-radius: 15px;
   }
 
   .inputGrid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 13px;
   }
 
   .inputGroup input {
-    height: 48px;
+    height: 47px;
   }
 
   .buttonRow {
-    gap: 10px;
+    flex-wrap: wrap;
   }
 
-
-  /* Popular */
+  .primaryButton,
+  .secondaryButton {
+    min-height: 42px;
+  }
 
   .popular {
-    margin-top: 42px;
+    margin-top: 38px;
   }
 
   .popular h2,
   .content h2,
   .stepsSection h2 {
-    font-size: 28px;
+    font-size: 23px;
   }
 
   .ratioGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 9px;
   }
 
-
-  /* Content */
+  .ratioCard {
+    min-height: 76px;
+  }
 
   .content {
-    margin-top: 52px;
+    margin-top: 48px;
   }
 
   .content p {
@@ -522,47 +428,36 @@
   }
 
   .ratioList div {
-    padding: 14px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
     font-size: 13px;
   }
 
-
-  /* Steps */
-
   .stepsSection {
-    margin-top: 52px;
+    margin-top: 48px;
   }
 
   .steps {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
-
 }
 
-
-/* =========================
-   SMALL PHONES
-========================= */
+/* SMALL PHONES */
 
 @media (max-width: 420px) {
-
   .page {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-
-  .hero {
-    padding-top: 42px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .hero h1 {
-    font-size: 35px;
-    letter-spacing: -1.5px;
+    font-size: 34px;
   }
 
   .hero p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .calculator {
@@ -570,29 +465,23 @@
   }
 
   .buttonRow {
-    flex-direction: column;
+    gap: 8px;
   }
 
   .primaryButton,
   .secondaryButton {
-    width: 100%;
+    font-size: 13px;
   }
 
-  .ratioGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .ratioGrid button {
-    min-height: 78px;
+  .ratioCard {
     padding: 11px;
   }
 
-  .ratioGrid strong {
-    font-size: 17px;
+  .ratioCard strong {
+    font-size: 16px;
   }
 
-  .ratioGrid span {
+  .ratioCard span {
     font-size: 9px;
   }
-
 }
