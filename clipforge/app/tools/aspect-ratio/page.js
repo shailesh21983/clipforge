@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Header, Footer } from "../../components";
 
 export default function AspectRatioTool() {
   const [width, setWidth] = useState("");
@@ -9,11 +8,15 @@ export default function AspectRatioTool() {
   const [result, setResult] = useState("");
 
   const gcd = (a, b) => {
+    a = Math.abs(a);
+    b = Math.abs(b);
+
     while (b !== 0) {
       const temp = b;
       b = a % b;
       a = temp;
     }
+
     return a;
   };
 
@@ -27,9 +30,8 @@ export default function AspectRatioTool() {
     }
 
     const divisor = gcd(w, h);
-    const ratio = `${w / divisor}:${h / divisor}`;
 
-    setResult(ratio);
+    setResult(`${w / divisor}:${h / divisor}`);
   };
 
   const clearAll = () => {
@@ -39,20 +41,32 @@ export default function AspectRatioTool() {
   };
 
   const useRatio = (w, h) => {
-    setWidth(w);
-    setHeight(h);
-    setResult("");
+    setWidth(String(w));
+    setHeight(String(h));
+
+    const divisor = gcd(w, h);
+    setResult(`${w / divisor}:${h / divisor}`);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      calculateRatio();
+    }
   };
 
   return (
     <main className="tool-page">
       <div className="tool-container">
 
-        {/* Hero */}
+        {/* HERO */}
         <section className="tool-hero">
-          <div className="tool-badge">Free Online Tool</div>
+          <div className="tool-badge">
+            Free Online Tool
+          </div>
 
-          <h1>Aspect Ratio Calculator</h1>
+          <h1>
+            Aspect Ratio Calculator
+          </h1>
 
           <p>
             Quickly calculate the aspect ratio of images, videos, screens,
@@ -60,32 +74,42 @@ export default function AspectRatioTool() {
           </p>
         </section>
 
-        {/* Calculator */}
+        {/* CALCULATOR */}
         <section className="calculator-card">
 
           <div className="input-grid">
 
             <div className="input-group">
-              <label htmlFor="width">Width</label>
+              <label htmlFor="width">
+                Width
+              </label>
 
               <input
                 id="width"
                 type="number"
+                min="1"
+                inputMode="numeric"
                 placeholder="e.g. 1920"
                 value={width}
                 onChange={(e) => setWidth(e.target.value)}
+                onKeyDown={handleKeyDown}
               />
             </div>
 
             <div className="input-group">
-              <label htmlFor="height">Height</label>
+              <label htmlFor="height">
+                Height
+              </label>
 
               <input
                 id="height"
                 type="number"
+                min="1"
+                inputMode="numeric"
                 placeholder="e.g. 1080"
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
+                onKeyDown={handleKeyDown}
               />
             </div>
 
@@ -94,6 +118,7 @@ export default function AspectRatioTool() {
           <div className="button-row">
 
             <button
+              type="button"
               className="primary-button"
               onClick={calculateRatio}
             >
@@ -101,6 +126,7 @@ export default function AspectRatioTool() {
             </button>
 
             <button
+              type="button"
               className="secondary-button"
               onClick={clearAll}
             >
@@ -110,23 +136,27 @@ export default function AspectRatioTool() {
           </div>
 
           {result && (
-            <div className="ratio-result">
-
+            <div
+              className={`ratio-result ${
+                result.includes(":") ? "" : "ratio-error"
+              }`}
+            >
               {result.includes(":") ? (
                 <>
                   <span>Your Aspect Ratio</span>
                   <strong>{result}</strong>
                 </>
               ) : (
-                <strong className="error-message">{result}</strong>
+                <strong className="error-message">
+                  {result}
+                </strong>
               )}
-
             </div>
           )}
 
         </section>
 
-        {/* Popular Ratios */}
+        {/* COMMON RATIOS */}
         <section className="popular-section">
 
           <h2>Common Aspect Ratios</h2>
@@ -138,6 +168,7 @@ export default function AspectRatioTool() {
           <div className="ratio-grid">
 
             <button
+              type="button"
               className="ratio-card"
               onClick={() => useRatio(1920, 1080)}
             >
@@ -146,6 +177,7 @@ export default function AspectRatioTool() {
             </button>
 
             <button
+              type="button"
               className="ratio-card"
               onClick={() => useRatio(1080, 1920)}
             >
@@ -154,6 +186,7 @@ export default function AspectRatioTool() {
             </button>
 
             <button
+              type="button"
               className="ratio-card"
               onClick={() => useRatio(1080, 1080)}
             >
@@ -162,6 +195,7 @@ export default function AspectRatioTool() {
             </button>
 
             <button
+              type="button"
               className="ratio-card"
               onClick={() => useRatio(1920, 1440)}
             >
@@ -170,6 +204,7 @@ export default function AspectRatioTool() {
             </button>
 
             <button
+              type="button"
               className="ratio-card"
               onClick={() => useRatio(1500, 1000)}
             >
@@ -178,6 +213,7 @@ export default function AspectRatioTool() {
             </button>
 
             <button
+              type="button"
               className="ratio-card"
               onClick={() => useRatio(2520, 1080)}
             >
@@ -189,7 +225,7 @@ export default function AspectRatioTool() {
 
         </section>
 
-        {/* Information */}
+        {/* INFORMATION */}
         <section className="tool-content">
 
           <h2>What Is an Aspect Ratio?</h2>
@@ -204,50 +240,62 @@ export default function AspectRatioTool() {
           <h2>How to Calculate Aspect Ratio</h2>
 
           <p>
-            Enter the width and height of your image or video above. The
-            calculator finds the greatest common divisor and simplifies the
-            dimensions into the smallest possible ratio.
+            Enter the width and height of your image, video, or screen.
+            This calculator finds the greatest common divisor and simplifies
+            the dimensions into the smallest possible ratio.
           </p>
 
           <h2>Popular Aspect Ratios</h2>
 
           <p>
-            Different platforms use different aspect ratios. YouTube and
-            widescreen displays commonly use 16:9, while TikTok, Instagram
-            Reels, and YouTube Shorts commonly use 9:16. Square social media
-            posts commonly use 1:1.
+            Different platforms and devices use different aspect ratios.
+            YouTube and widescreen displays commonly use 16:9, while TikTok,
+            Instagram Reels, and YouTube Shorts commonly use 9:16.
+            Square social media posts commonly use 1:1.
           </p>
 
           <div className="ratio-list">
 
             <div>
               <strong>16:9</strong>
-              <span> YouTube videos, TVs and widescreen displays</span>
+              <span>
+                YouTube videos, TVs and widescreen displays
+              </span>
             </div>
 
             <div>
               <strong>9:16</strong>
-              <span> TikTok, Instagram Reels and YouTube Shorts</span>
+              <span>
+                TikTok, Instagram Reels and YouTube Shorts
+              </span>
             </div>
 
             <div>
               <strong>1:1</strong>
-              <span> Square social media posts</span>
+              <span>
+                Square social media posts
+              </span>
             </div>
 
             <div>
               <strong>4:3</strong>
-              <span> Classic displays and older video formats</span>
+              <span>
+                Classic displays and older video formats
+              </span>
             </div>
 
             <div>
               <strong>3:2</strong>
-              <span> Photography and traditional cameras</span>
+              <span>
+                Photography and traditional cameras
+              </span>
             </div>
 
             <div>
               <strong>21:9</strong>
-              <span> Ultrawide monitors and cinematic displays</span>
+              <span>
+                Ultrawide monitors and cinematic displays
+              </span>
             </div>
 
           </div>
@@ -255,16 +303,16 @@ export default function AspectRatioTool() {
           <h2>Why Is Aspect Ratio Important?</h2>
 
           <p>
-            Using the correct aspect ratio helps your images and videos fit
+            Using the correct aspect ratio helps images and videos fit
             properly on different platforms without unwanted cropping,
-            stretching, or empty space. This is especially important when
-            creating content for social media, websites, presentations, and
-            video platforms.
+            stretching, or empty space. It is especially useful when
+            creating content for social media, websites, presentations,
+            and video platforms.
           </p>
 
         </section>
 
-        {/* How it works */}
+        {/* HOW IT WORKS */}
         <section className="steps-section">
 
           <h2>How This Tool Works</h2>
@@ -273,7 +321,9 @@ export default function AspectRatioTool() {
 
             <div className="step">
               <div className="step-number">01</div>
+
               <h3>Enter Dimensions</h3>
+
               <p>
                 Enter the width and height of your image, video, or screen.
               </p>
@@ -281,15 +331,19 @@ export default function AspectRatioTool() {
 
             <div className="step">
               <div className="step-number">02</div>
+
               <h3>Calculate</h3>
+
               <p>
-                Click the calculate button to simplify the dimensions.
+                Click Calculate Ratio to simplify the dimensions.
               </p>
             </div>
 
             <div className="step">
               <div className="step-number">03</div>
+
               <h3>Get Your Ratio</h3>
+
               <p>
                 Instantly get the simplified aspect ratio for your content.
               </p>
