@@ -714,4 +714,42 @@
   .secondary-button {
     width: 100%;
   }
+}/* =========================================
+   FINAL TOOL HERO - MATCH CLIPFORGE HOME
+========================================= */
+
+.tool-page {
+  min-height: 100vh;
+  padding: 0 24px 100px;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #292152 0%,
+      #17142b 18%,
+      #080b14 48%
+    );
+}
+
+.tool-hero {
+  padding-top: 78px;
+  margin-bottom: 52px;
+}
+
+.tool-hero h1 {
+  max-width: 900px;
+  margin: 24px auto 18px;
+  font-size: clamp(46px, 7vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -3px;
+}
+
+.tool-hero p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.calculator-card {
+  box-shadow: 0 20px 60px rgba(0,0,0,.18);
 }
