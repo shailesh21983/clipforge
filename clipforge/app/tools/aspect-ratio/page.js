@@ -2,357 +2,195 @@
 
 import { useState } from "react";
 
-const presets = [
-  { name: "16:9", width: 16, height: 9, label: "YouTube / TV" },
-  { name: "9:16", width: 9, height: 16, label: "Reels / Shorts / TikTok" },
-  { name: "1:1", width: 1, height: 1, label: "Square Posts" },
-  { name: "4:3", width: 4, height: 3, label: "Classic Video" },
-  { name: "3:2", width: 3, height: 2, label: "Photography" },
-  { name: "21:9", width: 21, height: 9, label: "Ultrawide" },
-];
-
-function getGcd(a, b) {
-  a = Math.abs(a);
-  b = Math.abs(b);
-
-  while (b !== 0) {
-    const temp = b;
-    b = a % b;
-    a = temp;
-  }
-
-  return a;
-}
-
 export default function AspectRatioTool() {
   const [width, setWidth] = useState("");
   const [height, setHeight] = useState("");
   const [result, setResult] = useState("");
-  const [decimal, setDecimal] = useState("");
-  const [copied, setCopied] = useState(false);
+
+  const gcd = (a, b) => {
+    while (b !== 0) {
+      const temp = b;
+      b = a % b;
+      a = temp;
+    }
+    return a;
+  };
 
   const calculateRatio = () => {
     const w = Number(width);
     const h = Number(height);
 
     if (!w || !h || w <= 0 || h <= 0) {
-      setResult("");
-      setDecimal("");
+      setResult("Please enter valid width and height.");
       return;
     }
 
-    const divisor = getGcd(w, h);
+    const divisor = gcd(w, h);
     const ratio = `${w / divisor}:${h / divisor}`;
 
     setResult(ratio);
-    setDecimal((w / h).toFixed(3));
-    setCopied(false);
-  };
-
-  const usePreset = (preset) => {
-    setWidth(preset.width);
-    setHeight(preset.height);
-    setResult(`${preset.width}:${preset.height}`);
-    setDecimal((preset.width / preset.height).toFixed(3));
-    setCopied(false);
   };
 
   const clearAll = () => {
     setWidth("");
     setHeight("");
     setResult("");
-    setDecimal("");
-    setCopied(false);
   };
 
-  const copyRatio = async () => {
-    if (!result) return;
-
-    try {
-      await navigator.clipboard.writeText(result);
-      setCopied(true);
-
-      setTimeout(() => {
-        setCopied(false);
-      }, 1800);
-    } catch {
-      setCopied(false);
-    }
+  const useRatio = (w, h) => {
+    setWidth(w);
+    setHeight(h);
+    setResult("");
   };
 
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        padding: "40px 20px 70px",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "900px",
-          margin: "0 auto",
-        }}
-      >
-        {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "35px" }}>
-          <div
-            style={{
-              display: "inline-block",
-              padding: "7px 14px",
-              borderRadius: "999px",
-              border: "1px solid rgba(255,255,255,.18)",
-              fontSize: "13px",
-              marginBottom: "14px",
-            }}
-          >
-            Free Online Tool
-          </div>
+    <main className="tool-page">
+      <div className="tool-container">
 
-          <h1
-            style={{
-              fontSize: "clamp(32px, 6vw, 52px)",
-              margin: "0 0 12px",
-              lineHeight: "1.1",
-            }}
-          >
-            Aspect Ratio Calculator
-          </h1>
+        {/* Hero */}
+        <section className="tool-hero">
+          <div className="tool-badge">Free Online Tool</div>
 
-          <p
-            style={{
-              maxWidth: "650px",
-              margin: "0 auto",
-              lineHeight: "1.7",
-              opacity: 0.8,
-            }}
-          >
+          <h1>Aspect Ratio Calculator</h1>
+
+          <p>
             Quickly calculate the aspect ratio of images, videos, screens,
             photos, and other rectangular dimensions.
           </p>
-        </div>
+        </section>
 
         {/* Calculator */}
-        <section
-          style={{
-            border: "1px solid rgba(255,255,255,.16)",
-            borderRadius: "18px",
-            padding: "25px",
-            background: "rgba(255,255,255,.03)",
-            boxShadow: "0 15px 50px rgba(0,0,0,.15)",
-          }}
-        >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: "18px",
-            }}
-          >
-            <div>
-              <label
-                style={{
-                  display: "block",
-                  fontWeight: "600",
-                  marginBottom: "8px",
-                }}
-              >
-                Width
-              </label>
+        <section className="calculator-card">
+
+          <div className="input-grid">
+
+            <div className="input-group">
+              <label htmlFor="width">Width</label>
 
               <input
+                id="width"
                 type="number"
-                min="1"
+                placeholder="e.g. 1920"
                 value={width}
                 onChange={(e) => setWidth(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") calculateRatio();
-                }}
-                placeholder="e.g. 1920"
-                style={{
-                  width: "100%",
-                  boxSizing: "border-box",
-                  padding: "14px",
-                  borderRadius: "10px",
-                  border: "1px solid #ccc",
-                  fontSize: "16px",
-                }}
               />
             </div>
 
-            <div>
-              <label
-                style={{
-                  display: "block",
-                  fontWeight: "600",
-                  marginBottom: "8px",
-                }}
-              >
-                Height
-              </label>
+            <div className="input-group">
+              <label htmlFor="height">Height</label>
 
               <input
+                id="height"
                 type="number"
-                min="1"
+                placeholder="e.g. 1080"
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") calculateRatio();
-                }}
-                placeholder="e.g. 1080"
-                style={{
-                  width: "100%",
-                  boxSizing: "border-box",
-                  padding: "14px",
-                  borderRadius: "10px",
-                  border: "1px solid #ccc",
-                  fontSize: "16px",
-                }}
               />
             </div>
+
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "10px",
-              marginTop: "20px",
-            }}
-          >
+          <div className="button-row">
+
             <button
+              className="primary-button"
               onClick={calculateRatio}
-              style={{
-                padding: "13px 20px",
-                borderRadius: "10px",
-                border: "none",
-                cursor: "pointer",
-                fontWeight: "600",
-              }}
             >
               Calculate Ratio
             </button>
 
             <button
+              className="secondary-button"
               onClick={clearAll}
-              style={{
-                padding: "13px 20px",
-                borderRadius: "10px",
-                border: "1px solid rgba(255,255,255,.2)",
-                cursor: "pointer",
-                background: "transparent",
-                color: "inherit",
-              }}
             >
               Clear
             </button>
+
           </div>
 
-          {/* Result */}
           {result && (
-            <div
-              style={{
-                marginTop: "25px",
-                padding: "25px",
-                borderRadius: "14px",
-                textAlign: "center",
-                border: "1px solid rgba(255,255,255,.14)",
-                background: "rgba(255,255,255,.04)",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: "14px",
-                  opacity: 0.7,
-                  marginBottom: "8px",
-                }}
-              >
-                Your Aspect Ratio
-              </div>
+            <div className="ratio-result">
 
-              <div
-                style={{
-                  fontSize: "42px",
-                  fontWeight: "800",
-                  marginBottom: "5px",
-                }}
-              >
-                {result}
-              </div>
+              {result.includes(":") ? (
+                <>
+                  <span>Your Aspect Ratio</span>
+                  <strong>{result}</strong>
+                </>
+              ) : (
+                <strong className="error-message">{result}</strong>
+              )}
 
-              <div style={{ opacity: 0.7, marginBottom: "18px" }}>
-                Decimal ratio: {decimal}
-              </div>
-
-              <button
-                onClick={copyRatio}
-                style={{
-                  padding: "10px 18px",
-                  borderRadius: "9px",
-                  border: "1px solid rgba(255,255,255,.2)",
-                  cursor: "pointer",
-                  fontWeight: "600",
-                }}
-              >
-                {copied ? "✓ Copied!" : "Copy Ratio"}
-              </button>
             </div>
           )}
+
         </section>
 
-        {/* Presets */}
-        <section style={{ marginTop: "35px" }}>
-          <h2 style={{ marginBottom: "8px" }}>Common Aspect Ratios</h2>
+        {/* Popular Ratios */}
+        <section className="popular-section">
 
-          <p style={{ opacity: 0.75, marginBottom: "18px" }}>
+          <h2>Common Aspect Ratios</h2>
+
+          <p>
             Select a popular ratio to instantly use it in the calculator.
           </p>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
-              gap: "12px",
-            }}
-          >
-            {presets.map((preset) => (
-              <button
-                key={preset.name}
-                onClick={() => usePreset(preset)}
-                style={{
-                  padding: "16px 10px",
-                  borderRadius: "12px",
-                  border: "1px solid rgba(255,255,255,.15)",
-                  background: "rgba(255,255,255,.03)",
-                  color: "inherit",
-                  cursor: "pointer",
-                  textAlign: "left",
-                }}
-              >
-                <strong style={{ fontSize: "20px" }}>
-                  {preset.name}
-                </strong>
+          <div className="ratio-grid">
 
-                <div
-                  style={{
-                    fontSize: "12px",
-                    opacity: 0.65,
-                    marginTop: "5px",
-                  }}
-                >
-                  {preset.label}
-                </div>
-              </button>
-            ))}
+            <button
+              className="ratio-card"
+              onClick={() => useRatio(1920, 1080)}
+            >
+              <strong>16:9</strong>
+              <span>YouTube / TV</span>
+            </button>
+
+            <button
+              className="ratio-card"
+              onClick={() => useRatio(1080, 1920)}
+            >
+              <strong>9:16</strong>
+              <span>Reels / Shorts / TikTok</span>
+            </button>
+
+            <button
+              className="ratio-card"
+              onClick={() => useRatio(1080, 1080)}
+            >
+              <strong>1:1</strong>
+              <span>Square Posts</span>
+            </button>
+
+            <button
+              className="ratio-card"
+              onClick={() => useRatio(1920, 1440)}
+            >
+              <strong>4:3</strong>
+              <span>Classic Video</span>
+            </button>
+
+            <button
+              className="ratio-card"
+              onClick={() => useRatio(1500, 1000)}
+            >
+              <strong>3:2</strong>
+              <span>Photography</span>
+            </button>
+
+            <button
+              className="ratio-card"
+              onClick={() => useRatio(2520, 1080)}
+            >
+              <strong>21:9</strong>
+              <span>Ultrawide</span>
+            </button>
+
           </div>
+
         </section>
 
         {/* Information */}
-        <section
-          style={{
-            marginTop: "50px",
-            lineHeight: "1.75",
-          }}
-        >
+        <section className="tool-content">
+
           <h2>What Is an Aspect Ratio?</h2>
 
           <p>
@@ -367,81 +205,99 @@ export default function AspectRatioTool() {
           <p>
             Enter the width and height of your image or video above. The
             calculator finds the greatest common divisor and simplifies the
-            dimensions to their smallest whole-number ratio.
-          </p>
-
-          <p>
-            For example, a 1920 × 1080 video simplifies to a{" "}
-            <strong>16:9</strong> aspect ratio.
+            dimensions into the smallest possible ratio.
           </p>
 
           <h2>Popular Aspect Ratios</h2>
 
-          <ul>
-            <li>
-              <strong>16:9</strong> — YouTube videos, TVs and widescreen
-              displays
-            </li>
-            <li>
-              <strong>9:16</strong> — TikTok, Instagram Reels and YouTube
-              Shorts
-            </li>
-            <li>
-              <strong>1:1</strong> — Square social media posts
-            </li>
-            <li>
-              <strong>4:3</strong> — Classic video and older displays
-            </li>
-            <li>
-              <strong>3:2</strong> — Common photography format
-            </li>
-            <li>
-              <strong>21:9</strong> — Ultrawide monitors and cinematic
-              displays
-            </li>
-          </ul>
+          <p>
+            Different platforms use different aspect ratios. YouTube and
+            widescreen displays commonly use 16:9, while TikTok, Instagram
+            Reels, and YouTube Shorts commonly use 9:16. Square social media
+            posts commonly use 1:1.
+          </p>
 
-          <h2>Why Aspect Ratio Matters</h2>
+          <div className="ratio-list">
+
+            <div>
+              <strong>16:9</strong>
+              <span> YouTube videos, TVs and widescreen displays</span>
+            </div>
+
+            <div>
+              <strong>9:16</strong>
+              <span> TikTok, Instagram Reels and YouTube Shorts</span>
+            </div>
+
+            <div>
+              <strong>1:1</strong>
+              <span> Square social media posts</span>
+            </div>
+
+            <div>
+              <strong>4:3</strong>
+              <span> Classic displays and older video formats</span>
+            </div>
+
+            <div>
+              <strong>3:2</strong>
+              <span> Photography and traditional cameras</span>
+            </div>
+
+            <div>
+              <strong>21:9</strong>
+              <span> Ultrawide monitors and cinematic displays</span>
+            </div>
+
+          </div>
+
+          <h2>Why Is Aspect Ratio Important?</h2>
 
           <p>
-            Using the correct aspect ratio helps prevent unwanted cropping,
-            stretching, or empty space when publishing images and videos on
-            websites and social media platforms.
+            Using the correct aspect ratio helps your images and videos fit
+            properly on different platforms without unwanted cropping,
+            stretching, or empty space. This is especially important when
+            creating content for social media, websites, presentations, and
+            video platforms.
           </p>
+
         </section>
 
-        {/* FAQ */}
-        <section
-          style={{
-            marginTop: "45px",
-            lineHeight: "1.7",
-          }}
-        >
-          <h2>Frequently Asked Questions</h2>
+        {/* How it works */}
+        <section className="steps-section">
 
-          <h3>What is the aspect ratio of 1920 × 1080?</h3>
-          <p>
-            1920 × 1080 has an aspect ratio of <strong>16:9</strong>.
-          </p>
+          <h2>How This Tool Works</h2>
 
-          <h3>What is the aspect ratio of 1080 × 1920?</h3>
-          <p>
-            1080 × 1920 has an aspect ratio of <strong>9:16</strong>,
-            which is commonly used for vertical videos.
-          </p>
+          <div className="steps">
 
-          <h3>What aspect ratio is best for YouTube?</h3>
-          <p>
-            Standard widescreen YouTube videos commonly use a{" "}
-            <strong>16:9</strong> aspect ratio.
-          </p>
+            <div className="step">
+              <div className="step-number">01</div>
+              <h3>Enter Dimensions</h3>
+              <p>
+                Enter the width and height of your image, video, or screen.
+              </p>
+            </div>
 
-          <h3>What aspect ratio is used for Shorts and Reels?</h3>
-          <p>
-            Vertical short-form videos commonly use a <strong>9:16</strong>{" "}
-            aspect ratio.
-          </p>
+            <div className="step">
+              <div className="step-number">02</div>
+              <h3>Calculate</h3>
+              <p>
+                Click the calculate button to simplify the dimensions.
+              </p>
+            </div>
+
+            <div className="step">
+              <div className="step-number">03</div>
+              <h3>Get Your Ratio</h3>
+              <p>
+                Instantly get the simplified aspect ratio for your content.
+              </p>
+            </div>
+
+          </div>
+
         </section>
+
       </div>
     </main>
   );
