@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Header, Footer } from "../../components";
 
 export default function AspectRatioTool() {
   const [width, setWidth] = useState("");
