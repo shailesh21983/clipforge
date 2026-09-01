@@ -41,3 +41,341 @@
     grid-template-columns:1fr;
   }
 }
+/* ================================
+   ClipForge Aspect Ratio Tool
+================================ */
+
+.tool-page {
+  min-height: 100vh;
+  background: #080b14;
+  color: #f5f7fb;
+  padding: 70px 20px 100px;
+}
+
+.tool-container {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.tool-hero {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.tool-badge {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 1px solid #303746;
+  border-radius: 999px;
+  color: #e5e9f2;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.tool-hero h1 {
+  margin: 0;
+  font-size: clamp(36px, 6vw, 54px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+
+.tool-hero p {
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: #aeb5c2;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Calculator */
+
+.calculator-card {
+  background: #11151f;
+  border: 1px solid #303746;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f5f7fb;
+}
+
+.input-group input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 48px;
+  border-radius: 9px;
+  border: 1px solid #d7dbe2;
+  background: #ffffff;
+  color: #111827;
+  padding: 0 14px;
+  font-size: 15px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.primary-button,
+.secondary-button {
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.primary-button {
+  background: #f5f5f5;
+  color: #111318;
+  border: 1px solid #f5f5f5;
+}
+
+.primary-button:hover {
+  background: #ffffff;
+}
+
+.secondary-button {
+  background: transparent;
+  color: #e9edf5;
+  border: 1px solid #3a4251;
+}
+
+.secondary-button:hover {
+  background: #191e29;
+}
+
+/* Result */
+
+.ratio-result {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid #303746;
+  background: #0b0f18;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.ratio-result span {
+  display: block;
+  color: #9fa8b8;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.ratio-result strong {
+  font-size: 30px;
+}
+
+.error-message {
+  font-size: 14px !important;
+  color: #ffb4b4;
+}
+
+/* Common Ratios */
+
+.popular-section {
+  margin-top: 38px;
+}
+
+.popular-section h2,
+.tool-content h2,
+.steps-section h2 {
+  font-size: 24px;
+  margin: 0 0 10px;
+  letter-spacing: -0.4px;
+}
+
+.popular-section > p {
+  color: #9fa8b8;
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+
+.ratio-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.ratio-card {
+  min-height: 78px;
+  text-align: left;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #303746;
+  background: #11151f;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.ratio-card:hover {
+  transform: translateY(-2px);
+  border-color: #596274;
+  background: #151a25;
+}
+
+.ratio-card strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.ratio-card span {
+  display: block;
+  color: #8992a3;
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+/* Content */
+
+.tool-content {
+  margin-top: 52px;
+}
+
+.tool-content h2 {
+  margin-top: 34px;
+}
+
+.tool-content h2:first-child {
+  margin-top: 0;
+}
+
+.tool-content p {
+  color: #aeb5c2;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.ratio-list {
+  margin-top: 18px;
+  display: grid;
+  gap: 9px;
+}
+
+.ratio-list div {
+  padding: 13px 15px;
+  background: #11151f;
+  border: 1px solid #272e3b;
+  border-radius: 9px;
+  color: #b5bdcb;
+  font-size: 14px;
+}
+
+.ratio-list strong {
+  color: #ffffff;
+}
+
+/* Steps */
+
+.steps-section {
+  margin-top: 55px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.step {
+  padding: 20px;
+  border: 1px solid #303746;
+  background: #11151f;
+  border-radius: 13px;
+}
+
+.step-number {
+  color: #8e98aa;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.step h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.step p {
+  margin: 0;
+  color: #969faf;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .tool-page {
+    padding: 45px 16px 70px;
+  }
+
+  .tool-hero h1 {
+    font-size: 38px;
+  }
+
+  .tool-hero p {
+    font-size: 14px;
+  }
+
+  .calculator-card {
+    padding: 16px;
+  }
+
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ratio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  .tool-hero h1 {
+    font-size: 32px;
+  }
+
+  .ratio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .button-row {
+    flex-wrap: wrap;
+  }
+
+}
