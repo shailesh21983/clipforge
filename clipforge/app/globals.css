@@ -405,4 +405,313 @@
   .ratio-card {
     min-height: 82px;
   }
+}/* =========================================
+   FINAL CLIPFORGE TOOL UI OVERRIDE
+========================================= */
+
+.tool-page {
+  min-height: 100vh;
+  padding: 76px 24px 100px;
+  background: #080b14;
+  color: #f7f8fc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tool-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Hero */
+
+.tool-hero {
+  max-width: 900px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.tool-badge {
+  display: inline-block;
+  padding: 8px 13px;
+  background: #17142b;
+  border: 1px solid #39315d;
+  border-radius: 99px;
+  color: #c8c2ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tool-hero h1 {
+  margin: 24px auto 16px;
+  color: #f7f8fc;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -3px;
+}
+
+.tool-hero p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #b7bfd0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Calculator */
+
+.calculator-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  background: #101522;
+  border: 1px solid #242c40;
+  border-radius: 18px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #f7f8fc;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input-group input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  background: #090d17;
+  border: 1px solid #303950;
+  border-radius: 10px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #8b7cff;
+}
+
+/* Buttons */
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.primary-button {
+  height: 44px;
+  padding: 0 20px;
+  background: #8b7cff;
+  border: 1px solid #8b7cff;
+  border-radius: 10px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background: #796aff;
+}
+
+.secondary-button {
+  height: 44px;
+  padding: 0 20px;
+  background: #151a29;
+  border: 1px solid #303750;
+  border-radius: 10px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Popular */
+
+.popular-section {
+  max-width: 900px;
+  margin: 52px auto 0;
+}
+
+.popular-section h2,
+.tool-content h2,
+.steps-section h2 {
+  color: #f7f8fc;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.popular-section > p {
+  color: #aab2c4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.ratio-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.ratio-card {
+  min-height: 82px;
+  padding: 13px;
+  background: #101522;
+  border: 1px solid #242c40;
+  border-radius: 14px;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.ratio-card:hover {
+  transform: translateY(-3px);
+  background: #131a2a;
+  border-color: #4a426f;
+}
+
+.ratio-card strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.ratio-card span {
+  display: block;
+  color: #8f98ac;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+/* Content */
+
+.tool-content {
+  max-width: 900px;
+  margin: 64px auto 0;
+}
+
+.tool-content p {
+  color: #aab2c4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Steps */
+
+.steps-section {
+  max-width: 900px;
+  margin: 64px auto 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.step {
+  padding: 22px;
+  background: #101522;
+  border: 1px solid #242c40;
+  border-radius: 16px;
+}
+
+.step-number {
+  margin-bottom: 12px;
+  color: #8b7cff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.step h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.step p {
+  color: #9fa8b8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Mobile */
+
+@media (max-width: 900px) {
+  .ratio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+
+  .tool-page {
+    padding: 60px 16px 80px;
+  }
+
+  .tool-hero h1 {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .tool-hero p {
+    font-size: 16px;
+  }
+
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ratio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .tool-hero h1 {
+    font-size: 34px;
+  }
+
+  .calculator-card {
+    padding: 16px;
+  }
+
+  .button-row {
+    flex-wrap: wrap;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
 }
