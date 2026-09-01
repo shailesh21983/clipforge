@@ -1138,4 +1138,224 @@ button {
   .tool-hero h1 {
     font-size: 31px;
   }
+}/* =========================================================
+   FINAL MOBILE POLISH
+   Desktop styles remain unchanged
+========================================================= */
+
+@media (max-width: 760px) {
+
+  /* Hero */
+  .hero {
+    padding: 48px 16px 48px;
+  }
+
+  .hero .badge {
+    max-width: 100%;
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    margin: 20px auto 18px;
+    font-size: 44px;
+    line-height: 1.04;
+    letter-spacing: -2px;
+  }
+
+  .hero p {
+    max-width: 520px;
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* Buttons */
+  .actions {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  .actions .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .trust {
+    margin-top: 16px;
+    font-size: 12px;
+  }
+
+  /* Homepage sections */
+  .section {
+    padding: 48px 0;
+  }
+
+  .section h2 {
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: -1px;
+  }
+
+  /* Content repurposer */
+  .toolbox {
+    margin-top: 24px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .textarea {
+    min-height: 140px;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .chips {
+    gap: 7px;
+  }
+
+  .chip {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  /* Cards */
+  .grid,
+  .tools-grid {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .card,
+  .tool-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  /* Aspect ratio */
+  .tool-page {
+    padding-bottom: 60px;
+  }
+
+  .tool-hero {
+    padding-top: 45px;
+    margin-bottom: 32px;
+  }
+
+  .tool-hero h1 {
+    margin-top: 20px;
+    font-size: 40px;
+    line-height: 1.05;
+  }
+
+  .tool-hero p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .calculator-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .popular-section {
+    margin-top: 40px;
+  }
+
+  .popular-section h2,
+  .tool-content h2,
+  .steps-section h2 {
+    font-size: 27px;
+  }
+
+  .tool-content {
+    margin-top: 50px;
+  }
+
+  .steps-section {
+    margin-top: 50px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .header-inner {
+    padding: 0 14px;
+  }
+
+  .site-logo {
+    font-size: 19px;
+  }
+
+  .header-cta {
+    min-height: 37px;
+    padding: 0 11px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 42px 14px 42px;
+  }
+
+  .hero .badge {
+    font-size: 11px;
+    padding: 7px 10px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    letter-spacing: -1.8px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .trust {
+    font-size: 11px;
+  }
+
+  .section {
+    padding: 42px 0;
+  }
+
+  .section h2 {
+    font-size: 28px;
+  }
+
+  .tool-hero {
+    padding-top: 40px;
+  }
+
+  .tool-hero h1 {
+    font-size: 34px;
+  }
+
+  .tool-hero p {
+    font-size: 14px;
+  }
+
+  .ratio-grid {
+    gap: 8px;
+  }
+
+  .ratio-card {
+    min-height: 76px;
+    padding: 11px;
+  }
+
+  .ratio-card strong {
+    font-size: 17px;
+  }
+
+  .ratio-card span {
+    font-size: 9px;
+  }
 }
